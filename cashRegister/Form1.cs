@@ -31,9 +31,10 @@ namespace cashRegister
         //variable for subtotal, tax, total, tendered, change, and order number
         double subtotal, tax, total, tendered, change;
         int orderNumber = 1;
-        
 
-       
+        //sund is used in multiple places, so it needs to be global
+        SoundPlayer crumple = new SoundPlayer(Properties.Resources.paper_rustle_1);
+
 
         public Form1()
         {
@@ -97,7 +98,7 @@ namespace cashRegister
             //adds and plays my sound;
             SoundPlayer chaChing = new SoundPlayer(Properties.Resources.Cha_Ching);
             chaChing.PlaySync();
-            SoundPlayer crumple = new SoundPlayer(Properties.Resources.paper_rustle_1);
+           
             crumple.Play();
             
             //resets labels just to be safe
