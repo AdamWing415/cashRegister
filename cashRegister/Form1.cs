@@ -13,6 +13,11 @@ using System.Media;
 
 namespace cashRegister
 {
+    /// <summary>
+    /// Adam Wingert
+    /// 25/2/2020
+    /// Cash register
+    /// </summary>
     public partial class Form1 : Form
     {
         // constant for my three products
