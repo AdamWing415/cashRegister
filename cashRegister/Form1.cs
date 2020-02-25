@@ -94,9 +94,13 @@ namespace cashRegister
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            //adds and plays my sound
+            //adds and plays my sound;
             SoundPlayer chaChing = new SoundPlayer(Properties.Resources.Cha_Ching);
-            chaChing.Play();
+            chaChing.PlaySync();
+            SoundPlayer crumple = new SoundPlayer(Properties.Resources.paper_rustle_1);
+            crumple.Play();
+            
+            //resets labels just to be safe
             receiptLabel.ResetText();
             receiptTop.ResetText();
             rightReceipt.ResetText();
@@ -158,11 +162,11 @@ namespace cashRegister
             rightReceipt.Text += ($"{change.ToString("C")}");
             receiptLabel.Refresh();
             rightReceipt.Refresh(); Thread.Sleep(500);
+            crumple.Stop();
         }
     private void newOrderButton_Click(object sender, EventArgs e)
         {
-            //adds a new ound to be used later
-            SoundPlayer crumple = new SoundPlayer(Properties.Resources.paper_rustle_1);
+       
             //resets all my text boxes and variabes that need reseting
             receiptLabel.ResetText();
             receiptTop.ResetText();
