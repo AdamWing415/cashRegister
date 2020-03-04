@@ -49,7 +49,7 @@
             this.changeLabel = new System.Windows.Forms.Label();
             this.changeOutput = new System.Windows.Forms.Label();
             this.changeButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.printButton = new System.Windows.Forms.Button();
             this.newOrderButton = new System.Windows.Forms.Button();
             this.receiptLabel = new System.Windows.Forms.Label();
             this.receiptTop = new System.Windows.Forms.Label();
@@ -57,6 +57,7 @@
             this.paper1 = new System.Windows.Forms.PictureBox();
             this.paper2 = new System.Windows.Forms.PictureBox();
             this.paper3 = new System.Windows.Forms.PictureBox();
+            this.errorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.paper1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paper2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paper3)).BeginInit();
@@ -289,18 +290,18 @@
             this.changeButton.UseVisualStyleBackColor = false;
             this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
             // 
-            // button2
+            // printButton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.Font = new System.Drawing.Font("Pristina", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(44, 511);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(321, 39);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Print receipt";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.printButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.printButton.Font = new System.Drawing.Font("Pristina", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.printButton.Location = new System.Drawing.Point(44, 511);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(321, 39);
+            this.printButton.TabIndex = 20;
+            this.printButton.Text = "Print receipt";
+            this.printButton.UseVisualStyleBackColor = false;
+            this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
             // newOrderButton
             // 
@@ -375,6 +376,19 @@
             this.paper3.TabStop = false;
             this.paper3.Visible = false;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.errorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.errorLabel.Font = new System.Drawing.Font("Pristina", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.Location = new System.Drawing.Point(260, 238);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(328, 99);
+            this.errorLabel.TabIndex = 28;
+            this.errorLabel.Text = "Please input a valid numerical Value.";
+            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.errorLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -382,11 +396,12 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(846, 562);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.rightReceipt);
             this.Controls.Add(this.receiptTop);
             this.Controls.Add(this.receiptLabel);
             this.Controls.Add(this.newOrderButton);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.printButton);
             this.Controls.Add(this.changeButton);
             this.Controls.Add(this.changeOutput);
             this.Controls.Add(this.changeLabel);
@@ -444,7 +459,7 @@
         private System.Windows.Forms.Label changeLabel;
         private System.Windows.Forms.Label changeOutput;
         private System.Windows.Forms.Button changeButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Button newOrderButton;
         private System.Windows.Forms.Label receiptLabel;
         private System.Windows.Forms.Label receiptTop;
@@ -452,6 +467,7 @@
         private System.Windows.Forms.PictureBox paper1;
         private System.Windows.Forms.PictureBox paper2;
         private System.Windows.Forms.PictureBox paper3;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 

@@ -74,7 +74,11 @@ namespace cashRegister
                 soulInput.ResetText();
                 darkInput.ResetText();
                 dietInput.ResetText();
-                receiptLabel.Text = "The values inputted are incorrect";
+                errorLabel.Show();
+                errorLabel.Refresh();
+                Thread.Sleep(2000);
+                errorLabel.Hide();
+                errorLabel.Refresh();
             }
         }
         private void changeButton_Click(object sender, EventArgs e)
@@ -90,10 +94,14 @@ namespace cashRegister
             catch
             {
                 tenderedInput.ResetText();
-                receiptLabel.Text = "The values inputted are incorrect";
+                errorLabel.Show();
+                errorLabel.Refresh();
+                Thread.Sleep(2000);
+                errorLabel.Hide();
+                errorLabel.Refresh();
             }
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void printButton_Click(object sender, EventArgs e)
         {
             //adds and plays my sound;
             SoundPlayer chaChing = new SoundPlayer(Properties.Resources.Cha_Ching);
@@ -197,18 +205,26 @@ namespace cashRegister
             paper2.Hide();
             Refresh();
             Thread.Sleep(750);
+
+            //paper is fully crumpled
             paper1.Hide();
             paper2.Show();
             Refresh();
             Thread.Sleep(750);
+
+            //paper begins unfolding
             paper2.Hide();
             paper1.Show();
             Refresh();
             Thread.Sleep(750);
+
+            //paper finishes unfolding
             paper1.Hide();
             paper3.Show();
             Refresh();
             Thread.Sleep(750);
+
+            //hides paper and shows labels 
             paper3.Hide();
             crumple.Stop();
             receiptTop.Show();
