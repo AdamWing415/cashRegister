@@ -115,7 +115,7 @@ namespace cashRegister
             rightReceipt.ResetText();
 
             //writes my header text in my top text box with pauses between each line
-            receiptTop.Text = ($"Ye Olde Soule Shoppe \n");
+            receiptTop.Text = ("Ye Olde Soule Shoppe \n");
             receiptTop.Refresh();
             Thread.Sleep(500);
 
@@ -146,28 +146,28 @@ namespace cashRegister
             rightReceipt.Refresh();
             Thread.Sleep(500);
 
-            receiptLabel.Text += ($"\n\nSubtotal\n");
+            receiptLabel.Text += ("\n\nSubtotal\n");
             rightReceipt.Text += ($"{subtotal.ToString("C")}\n");
             receiptLabel.Refresh();
             rightReceipt.Refresh();
             Thread.Sleep(500);
 
-            receiptLabel.Text += ($"Tax\n");
+            receiptLabel.Text += ("Tax\n");
             rightReceipt.Text += ($"{tax.ToString("C")}\n");
             receiptLabel.Refresh();
             rightReceipt.Refresh(); Thread.Sleep(500);
 
-            receiptLabel.Text += ($"Total");
+            receiptLabel.Text += ("Total");
             rightReceipt.Text += ($"{total.ToString("C")}\n \n");
             receiptLabel.Refresh();
             rightReceipt.Refresh(); Thread.Sleep(500);
 
-            receiptLabel.Text += ($"\n\nTendered\n");
+            receiptLabel.Text += ("\n\nTendered\n");
             rightReceipt.Text += ($"{tendered.ToString("C")}\n ");
             receiptLabel.Refresh();
             rightReceipt.Refresh(); Thread.Sleep(500);
 
-            receiptLabel.Text += ($"Change");
+            receiptLabel.Text += ("Change");
             rightReceipt.Text += ($"{change.ToString("C")}");
             receiptLabel.Refresh();
             rightReceipt.Refresh(); Thread.Sleep(500);
